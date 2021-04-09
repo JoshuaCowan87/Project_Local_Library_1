@@ -20,12 +20,15 @@ for (let i = 0; i < books.length; i++){
 return sum
   }
 
+function findBorrowedBooksByAccount(books, account) {
+  return books.filter(book =>
+    book.borrows[0].id === account.id);
+}
 
 function getBooksPossessedByAccount(account, books, authors) {
  
  
- let borrowed = books.filter(book =>
-        book.borrows[0].id === account.id);
+ let borrowed = findBorrowedBooksByAccount(books, account);
   
   for (let i = 0; i < borrowed.length; i++) {
     for (let j= 0; j < authors.length; j++) {

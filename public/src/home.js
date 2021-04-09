@@ -60,6 +60,7 @@ function getMostPopularAuthors(books, authors) {
     });
        return {name : first + " " + last, count : book.borrows.length }
   })
+
  final.sort((countA, countB) => countA.count > countB.count ? -1 : 1
   )
   return final.slice(0,5)

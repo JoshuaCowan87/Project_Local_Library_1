@@ -19,7 +19,7 @@ const partitionBooksByBorrowedStatus = (books => {
 let borrowedBooks = books.filter(book => book.borrows[0].returned === false);
   
   let returnedBooks = books.filter(book => book.borrows[0].returned === true);
-  //let allBooks = [borrowedBooks, returnedBooks];
+ 
    return [borrowedBooks, returnedBooks]
 }
 )
